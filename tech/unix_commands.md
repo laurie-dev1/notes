@@ -41,9 +41,9 @@ intel-gpu-tools \
 libva-utils intel-media-sdk
 
 **global env - /etc/environment**  
-LIBVA_DRIVERS_PATH=/usr/lib/dri/
-LIBVA_DRIVER_NAME=iHD
-ANV_DEBUG=video-decode,video-encode
+LIBVA_DRIVERS_PATH=/usr/lib/dri/  
+LIBVA_DRIVER_NAME=iHD  
+ANV_DEBUG=video-decode,video-encode  
 
 **force intel xe in kernel commandline, /etc/default/grub**  
 GRUB_CMDLINE_LINUX="i915.force_probe=!a7a0 xe.force_probe=a7a0"
