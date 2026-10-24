@@ -25,3 +25,28 @@ unlz4 < sda3.lz4 | dd bs=1M status=progress of=/dev/sda3
 unlz4 < sda4.lz4 | dd bs=1M status=progress of=/dev/sda4  
 
 If required do a bootrec /fixmbr from recovery drive  
+
+## rsync full system backup  
+rsync -aAXHv --exclude='/dev/*' --exclude='/proc/*' --exclude='/sys/*' \
+--exclude='/tmp/*' --exclude='/run/*' --exclude='/mnt/*' \
+--exclude='/media/*' --exclude='/lost+found/' / /path/to/backup
+
+## archlinux intel integrated graphics setup for NUC13ANHi7  
+
+sudo pacman -S intel-ucode \
+intel-media-driver \
+vulkan-tools vulkan-mesa-layers \
+vulkan-intel \
+intel-gpu-tools \
+libva-utils intel-media-sdk
+
+**global env - /etc/environment**  
+LIBVA_DRIVERS_PATH=/usr/lib/dri/
+LIBVA_DRIVER_NAME=iHD
+ANV_DEBUG=video-decode,video-encode
+
+**Grub - /etc/default/grub**  
+GRUB_CMDLINE_LINUX="i915.force_probe=!a7a0 xe.force_probe=a7a0"
+
+## grub simple cryptsetup (encrypted root, unecrypted boot).   
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=9accd62c-f3f0-4c26-95f0-2dd5edf6e569:artix rootfs=/dev/mapper/artix"
