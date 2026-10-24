@@ -212,9 +212,9 @@ The flag you decide to use has to come before the actual adb command:
 93 -->  "KEYCODE_PAGE_DOWN"  
 94 -->  "KEYCODE_PICTSYMBOLS"  
 ...
-122 -->  "KEYCODE_MOVE_HOME"
-123 -->  "KEYCODE_MOVE_END"
-# https://developer.android.com/reference/android/view/KeyEvent.html
+122 -->  "KEYCODE_MOVE_HOME"  
+123 -->  "KEYCODE_MOVE_END"  
+# https://developer.android.com/reference/android/view/KeyEvent.html  
 
 ---
 
