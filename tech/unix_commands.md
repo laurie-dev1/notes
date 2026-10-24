@@ -45,8 +45,8 @@ LIBVA_DRIVERS_PATH=/usr/lib/dri/
 LIBVA_DRIVER_NAME=iHD
 ANV_DEBUG=video-decode,video-encode
 
-**Grub - /etc/default/grub**  
+**force intel xe in kernel commandline, /etc/default/grub**  
 GRUB_CMDLINE_LINUX="i915.force_probe=!a7a0 xe.force_probe=a7a0"
 
 ## grub simple cryptsetup (encrypted root, unecrypted boot).   
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=9accd62c-f3f0-4c26-95f0-2dd5edf6e569:artix rootfs=/dev/mapper/artix"
+GRUB_CMDLINE_LINUX_DEFAULT="cryptdevice=UUID=9accd62c-f3f0-4c26-95f0-2dd5edf6e569:artix rootfs=/dev/mapper/artix"
