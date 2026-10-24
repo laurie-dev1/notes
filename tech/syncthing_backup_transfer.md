@@ -12,7 +12,7 @@ To successfully back up Syncthing to a new device, follow these steps:
 
 - On the original device, locate the Syncthing configuration files in the following directory:
 ```
-/home/steve/.local/state/syncthing
+/home/user/.local/state/syncthing
 ```
 
 Copy the following files from this folder:
