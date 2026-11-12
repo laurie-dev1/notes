@@ -31,7 +31,7 @@ rsync -aAXHv --exclude='/dev/*' --exclude='/proc/*' --exclude='/sys/*' \
 --exclude='/tmp/*' --exclude='/run/*' --exclude='/mnt/*' \
 --exclude='/media/*' --exclude='/lost+found/' / /path/to/backup
 
-## artixlinux intel integrated graphics setup for NUC13ANHi7  
+## archlinux intel integrated graphics setup for NUC13ANHi7  
 
 sudo pacman -S intel-ucode \
 intel-media-driver \
@@ -48,7 +48,7 @@ ANV_DEBUG=video-decode,video-encode
 **force intel xe in kernel commandline, /etc/default/grub**  
 GRUB_CMDLINE_LINUX="i915.force_probe=!a7a0 xe.force_probe=a7a0"
 
-## artixlinux mkinitcpio.conf hooks for encrypt.
+## archlinux mkinitcpio.conf hooks for encrypt.
 HOOKS=(base udev autodetect microcode modconf kms keyboard consolefont block encrypt filesystems fsck)  
 
 ## grub simple cryptsetup (encrypted root, unecrypted boot).   
